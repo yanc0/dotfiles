@@ -1,3 +1,5 @@
+set nocompatible
+
 syn on
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -12,24 +14,29 @@ command W w !sudo tee % > /dev/null
 "Always show current position
 set ruler
 
+" Always insert in paste mode, avoid auto indent
+set paste
+
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
 
-" Configure backspace so it acts as it should act
+"" Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
-" Ignore case when searching
+"
+"" Ignore case when searching
 set ignorecase
-
-" When searching try to be smart about cases 
+"
+"" When searching try to be smart about cases 
 set smartcase
-
-" Highlight search results
+"
+"" Highlight search results
 set hlsearch
+nnoremap <CR> :noh<CR><CR>
+
 
 " Makes search act like search in modern browsers
 set incsearch 
@@ -54,6 +61,7 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+"""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -75,14 +83,15 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
 
+""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -101,6 +110,6 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
+" set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
